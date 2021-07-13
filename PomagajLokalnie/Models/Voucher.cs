@@ -12,7 +12,6 @@ namespace PomagajLokalnie.Models
         public double? StartAmount { get; set; }
         public double? CurrentAmount { get; set; }
         public DateTime? ExpirationDate { get; set; }
-
         public virtual Offer Offer { get; set; }
     }
 }
