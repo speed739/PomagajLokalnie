@@ -24,8 +24,10 @@
                 <span asp-validation-for="User.Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="User.Roles" class="control-label"></label>
-                <input asp-for="User.Roles" class="form-control" />
+                <br />
+                @Html.RadioButtonFor(m => m.rolesEnum, 1) Admin
+                @Html.RadioButtonFor(m => m.rolesEnum, 2) Company
+                @Html.RadioButtonFor(m => m.rolesEnum, 3) Client
                 <span asp-validation-for="User.Roles" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -33,10 +35,6 @@
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -5,17 +5,21 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using PomagajLokalnie.Enums;
 using PomagajLokalnie.Models;
 
 namespace PomagajLokalnie.Pages.Account
 {
     public class RegisteryModel : PageModel
     {
-        private readonly PomagajLokalnie.Models.PomagajLokalnieContext _context;
+        private readonly PomagajLokalnieContext _context;
+        private User _user;
+        public Roles rolesEnum;
 
-        public RegisteryModel(PomagajLokalnie.Models.PomagajLokalnieContext context)
+        public RegisteryModel(PomagajLokalnieContext context)
         {
             _context = context;
+           
         }
 
         public IActionResult OnGet()
@@ -24,7 +28,7 @@ namespace PomagajLokalnie.Pages.Account
         }
 
         [BindProperty]
-        public User User { get; set; }
+        public User User { get => _user; set => _user = value; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

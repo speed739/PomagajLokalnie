@@ -27,7 +27,7 @@ namespace PomagajLokalnie.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=GRZESIEK\\SQLEXPRESS01;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False; Database=PomagajLokalnie");
+                optionsBuilder.UseSqlServer("Data Source=GRZESIEK\\SQLEXPRESS01;Initial Catalog=PomagajLokalnie;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             }
         }
 
@@ -102,7 +102,6 @@ namespace PomagajLokalnie.Models
                     .HasForeignKey(d => d.OfferId)
                     .HasConstraintName("FK__Voucher__OfferId__2F10007B");
             });
-
             OnModelCreatingPartial(modelBuilder);
         }
 
