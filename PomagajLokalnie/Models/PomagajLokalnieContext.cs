@@ -10,6 +10,7 @@ namespace PomagajLokalnie.Models
     {
         public PomagajLokalnieContext()
         {
+            
         }
 
         public PomagajLokalnieContext(DbContextOptions<PomagajLokalnieContext> options)
@@ -23,6 +24,8 @@ namespace PomagajLokalnie.Models
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Voucher> Vouchers { get; set; }
 
+        
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -34,9 +37,10 @@ namespace PomagajLokalnie.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Polish_CI_AS");
-
             modelBuilder.Entity<Company>(entity =>
             {
+                
+                 
                 entity.HasKey(e => e.Nip)
                     .HasName("PK__Company__C7DEC3C70066F3DA");
 

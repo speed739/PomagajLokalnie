@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace PomagajLokalnie.Models
 {
-    public partial class Company
+    public class Company
     {
         public int Nip { get; set; }
         public string Name { get; set; }
